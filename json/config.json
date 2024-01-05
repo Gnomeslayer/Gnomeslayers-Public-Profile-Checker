@@ -1,0 +1,11 @@
+{
+    "tokens": {
+        "discord_token": "",
+        "battlemetrics_token": "",
+        "steam_token": ""
+    },
+    "additional": {
+        "application_id": 1234,
+        "prefix": "thisdoesntevenwork"
+    }
+}
