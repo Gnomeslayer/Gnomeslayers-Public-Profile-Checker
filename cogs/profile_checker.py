@@ -26,7 +26,7 @@ class Profile_Checker(commands.Cog):
             return
         user_profile = await fun.get_player_info(player_id=user_ids.bmid)
         kill_stats = await fun.player_stats(bmid=user_ids.bmid)
-        embed = discord.Embed(title=f"{user_profile.player_name}", description=f"[Steam]({user_profile.profile_url}) - [Battlemetrics](https://www.battlemetrics.com/rcon/players/{user_ids.bmid})")
+        embed = discord.Embed(title=f"{user_profile.player_name}", description=f"[Steam]({user_profile.profile_url}) - [Battlemetrics](https://www.battlemetrics.com/rcon/players/{user_ids.bmid})", color=int(self.config['additional']['embed_color'], base=16))
         embed.set_thumbnail(url=user_profile.avatar_url)
         embed.set_footer(text="Gnomeslayers Profile Viewer.")
         embed.add_field(name="Hours across Rust", value=f"Total Hours: {user_profile.playtime}, Training: {user_profile.playtime_training}", inline=False)

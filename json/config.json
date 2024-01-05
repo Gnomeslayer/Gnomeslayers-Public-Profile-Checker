@@ -6,6 +6,7 @@
     },
     "additional": {
         "application_id": 1234,
-        "prefix": "thisdoesntevenwork"
+        "prefix": "thisdoesntevenwork",
+        "embed_color": "0x2ecc71"
     }
 }
