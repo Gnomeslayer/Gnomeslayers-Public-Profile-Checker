@@ -7,7 +7,7 @@ from dataclasses import dataclass
 # Standard library imports
 from datetime import datetime, timezone, timedelta
 
-from lib.battlemetrics import Battlemetrics
+from battlemetrics import Battlemetrics
 
 with open("./json/config.json", "r") as config_file:
     config = json.load(config_file)
@@ -120,7 +120,7 @@ async def get_id_from_steam(url: str) -> int:
         return 0
 
 
-async def get_player_ids(submittedtext: str) -> Playerids or None:
+async def get_player_ids(submittedtext: str):
     steamid = 0
     if validators.url(submittedtext):
         mysplit = submittedtext.split("/")
@@ -164,7 +164,7 @@ async def kda_two_weeks(bmid: int) -> dict:
     return await api.helpers._make_request(method="GET", url=url, data=params)
 
 
-async def player_stats(bmid: int) -> Playerstats or None:
+async def player_stats(bmid: int):
     kda_results = await kda_two_weeks(bmid)
     stats = Playerstats()
     if kda_results:

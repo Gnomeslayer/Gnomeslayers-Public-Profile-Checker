@@ -2,7 +2,6 @@ from discord import app_commands
 from discord.ext import commands
 import discord
 import json
-from lib.battlemetrics import Battlemetrics
 import lib.functions as fun
 
 class Profile_Checker(commands.Cog):
@@ -13,8 +12,6 @@ class Profile_Checker(commands.Cog):
         
     with open("./json/config.json", "r") as f:
         config = json.load(f)
-        
-    bmapi = Battlemetrics(config['tokens']['battlemetrics_token'])
     
     @app_commands.command(name="profile", description="Searches a profile")
     @app_commands.guild_only()
